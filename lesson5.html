@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thăm dò chức năng hô hấp </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: none;
+      padding: 40px 5%;
+      background: white;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 10px;
+      }
+      h1 { font-size: 20px; }
+      p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+
+  <div class="container">
+    <h1>Bài 5: Tóm tắt và các ca thực hành</h1>
+    <p>© 2014 Eric Strong - Stanford University</p>
+    <p>Dịch và dựng video © 2025 Tran Thi Minh</p>
+    <p>Vui lòng không sao chép hoặc tải về.</p>
+
+    <video controls controlsList="nodownload" oncontextmenu="return false" ondragstart="return false">
+    <source src="../videos/video5.mp4" type="video/mp4">
+
+      Trình duyệt không hỗ trợ video này.
+    </video>
+  </div>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && ['u','s','c','a','x'].includes(e.key.toLowerCase()))
+      ) {
+        e.preventDefault();
+        alert("Không được phép thao tác này.");
+      }
+    });
+
+    document.addEventListener('dragstart', e => e.preventDefault());
+    document.addEventListener('copy', e => {
+      e.preventDefault();
+      alert("Không được phép sao chép.");
+    });
+  </script>
+
+</body>
+</html>
